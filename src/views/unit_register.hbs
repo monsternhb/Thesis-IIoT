@@ -1,0 +1,145 @@
+<!-- Register page -->
+<div class='reg__page grid__column-10' id={{role}}>
+  <div class='reg_control'>
+    <div class='grid__row'>
+
+      <div class="btn__float">
+        <button type="button" class="btn btn__r btn--reg header__register">CREAT ACCOUNT FOR USER</button>
+      </div>
+
+      <div class='grid__column-10'>
+        <div class='reg__table'>
+          <div class='grid__row center--table'>
+            <!-- table tittle -->
+            <div class='table table__header'>
+              {{!-- <span class='table__id'>ID</span> --}}
+              <span class='table__name'>User Name</span>
+              <span class='table__col'>Role</span>
+              <span class='table__col'>Email</span>
+            </div>
+
+            <!-- Table data -->
+            {{#each registers}}
+            <div class='table table__data'>
+            {{!-- <span class='table__id'>{{this._id}}</span> --}}
+            <span class='table__name'>{{this.user_name}}</span>
+            <span class='table__role'>{{this.role}}</span>
+            <span class='table__role'>{{this.email}}</span>
+
+            </div>
+
+            {{/each}}
+    
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+</div>
+
+<div class="modal--reg modal--disable">
+        <div class="modal__overlayxx"></div>
+        <div class="modal__bodyxx">
+          <!--Register form-->
+          <div class="auth__form auth__form-register modal--disable">
+            <div class="form__container">
+              <div class="form__header">
+                <h3 class="form__header-text">REGISTER</h3>
+              </div>
+
+              <div class="form__contain">
+                    <form class='login register-flex' method='POST' action='register/save'>
+
+                      <div class='login'>
+                        {{!-- <label for='user_name'></label> --}}
+                        <input
+                          type='text'
+                          placeholder='User name'
+                          class='login__input login__input--user'
+                          id='user_name'
+                          name='user_name'
+                        />
+                      </div>
+
+                      <!-- In practice, use type="password" -->
+                      <div class='login register-flex'>
+                        {{!-- <label for='pass'></label> --}}
+                        <input
+                          type='password'
+                          placeholder='PIN'
+                          minlength='3'
+                          class='login__input login__input--pin'
+                          id='pass'
+                          name='pass'
+                        />
+                        <input
+                          type='password'
+                          placeholder='Confirm'
+                          minlength='3'
+                          class='login__input login__input--pin'
+                          name="confirm"
+                        />
+                      </div>
+
+                      <div class='login'>
+                        {{!-- <label for='user_name'></label> --}}
+                        <input
+                          type='text'
+                          placeholder='Email'
+                          class='login__input login__input--user'
+                          id='email'
+                          name='email'
+                        />
+                      </div>
+
+                      <div class='login'>
+                        <select name='role' class='login__input login__input--user'>
+                          <option value='manager'>manager</option>
+                          <option value='operator'>operator</option>
+                          <option value='viewer'>viewer</option>
+                        </select>
+                      </div>
+
+                      <button class='btn--register'>&rarr;</button>
+                    </form>
+              </div>
+            </div>
+          </div>
+
+        </div>
+</div>
+
+
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', async function(){
+    const container = document.querySelector('.reg__page');
+    const formRegister = document.querySelector('.auth__form-register');
+    const modalContainer = document.querySelector('.modal--reg');
+    const btnReg = document.querySelector('.btn--reg');
+    const modalOv = document.querySelector('.modal__overlayxx');
+
+
+    //get role
+    const role = await container.id;
+
+    btnReg.addEventListener('click',function(e){
+      modalContainer.classList.remove('modal--disable');
+      formRegister.classList.add('modal--disable');
+
+      if (e.target.classList.contains('header__register')) {
+        formRegister.classList.toggle('modal--disable');
+      } 
+    })
+
+    modalOv.addEventListener('click', (e)=>{
+      if (!e.target.closest('modal__bodyxx')) 
+      modalContainer.classList.add('modal--disable');
+    })
+   
+
+  })
+</script>

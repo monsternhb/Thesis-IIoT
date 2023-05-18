@@ -1,0 +1,144 @@
+<!-- History page -->
+<div class='history__page grid__column-10' id={{role}}>
+  <div class='history__control bbb' id={{devId}}>
+    <div class='grid__row'>
+      <div class='history__btn'>
+        {{#ifCond role }}
+          {{else}} 
+        <button class='btn__primary btn__history1 btn__history'>
+          view controller
+        </button>
+        {{/ifCond}}
+
+        {{#ifIp devIp}}
+        <button class='btn__primary btn__history2 btn__history'>
+          view total products
+        </button>
+        {{else}}
+        {{/ifIp}}
+
+
+        <button class='btn__primary btn__history3 btn__history'>Export</button>
+      </div>
+    </div>
+  </div>
+
+  <div class='history__option' id={{startDate}}>
+    <div class='grid__row'>
+      <form action='/register/history' class='form-option'>
+        <span class='option-text'>Date from</span>
+        <input type='date' class='date-from' name="start" value={{startDate}} />
+        <span class='option-text'>Date to</span>
+        <input type='date' class='date-from' name="end"  value ={{endDate}} />
+        <button class='btn--app'><i class="fa fa-search" aria-hidden="true"></i></button>
+      </form>
+    </div>
+  </div>
+
+  <div class='history__table' id={{endDate}}>
+    <div class='grid__row'>
+      <!-- table tittle -->
+      <div class='table table__header'>
+        <span class='table__id'>User</span>
+        <span class='table__time'>Time</span>
+        <span class='table__controller'>Behavior</span>
+      </div>
+      <!-- Table data -->
+      {{#each histories}}
+        <div class='table table__data'>
+          <span class='table__id'>{{this.user_name}}</span>
+          <span class='table__time'>{{formatDate this.time}}</span>
+          <span class='table__controller'>{{this.behavior}}</span>
+        </div>
+      {{/each}}
+    </div>
+  </div>
+
+                  
+  <div class="pagination pagination__list pagination-centered   pag-edit" id={{pagination.page}}>
+    <nav aria-label="Page navigation example" class ='bao' id={{pagination.numPage}}>
+      <ul class="pagination">
+        <li class="page-item ">
+          <a class="page-link page-back"  aria-label="Previous">
+            <span aria-hidden="true">&laquo;</span>
+          </a>
+        </li>
+        {{#times pagination.numPage}}
+            <li class="page-item page-number "><a class="page-link page-{{this}} page--num" >{{this}}</a></li>
+        {{/times}}
+
+        <li class="page-item ">
+          <a class="page-link page-next"  aria-label="Next">
+            <span aria-hidden="true">&raquo;</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+                  
+
+                
+  </ul>
+</div>
+
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', async function(){ 
+
+    let curPage = Number(document.querySelector(".pagination__list").id);
+    let numPages = Number(document.querySelector(".bao").id);
+    let startDate = document.querySelector('.history__option').id;
+    let endDate = document.querySelector('.history__table').id;
+
+    let allpageNum = document.querySelectorAll('.page--num');
+
+    allpageNum.forEach((page,i) => {
+      page.classList.remove('page-color');
+      page.setAttribute("href",`?page=${i+1}&start=${startDate}&end=${endDate}`);
+    });
+
+    let numPageColor = ".page-"+`${curPage}`;
+
+    let pageColor = document.querySelector(numPageColor);
+    pageColor.classList.add('page-color');
+
+    // click > -> curPage++ and so on
+    const btnPagLeft = document.querySelector('.page-back');
+    const btnPagRight = document.querySelector('.pagi-next');
+    
+    btnPagLeft.setAttribute('href',`?page=${curPage-1}`);
+    btnPagRight.setAttribute('href',`?page=${curPage+1}`);
+    if((curPage+1)> numPages){
+      btnPagRight.setAttribute('href',`?page=${numPages}`);
+    }
+    if((curPage-1) <1){
+      btnPagLeft.setAttribute('href',`?page=${1}`);
+    }
+  })
+
+
+  //export DB
+  const btnExport = document.querySelector('.btn__history3');
+  const devId = document.querySelector('.bbb').id;
+  btnExport.addEventListener('click',(e)=>{
+     axios.get(`export/history`,{}) 
+      .then((res)=>{} )
+      .catch(function (error) { console.log(error.message); })
+  })
+
+  // view controller
+  const btnViewCo = document.querySelector('.btn__history1');
+  btnViewCo.addEventListener('click',(e)=>{
+     window.location.href = '/register/home';
+  })
+
+  // view number of product
+  const btnPro = document.querySelector('.btn__history2');
+  btnPro.addEventListener('click',(e)=>{
+     axios.get(`../history/export/product`,{}) 
+      .then((res)=>{} )
+      .catch(function (error) { console.log(error.message); })
+  })
+
+</script> 

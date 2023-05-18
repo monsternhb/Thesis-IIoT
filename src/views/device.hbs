@@ -1,0 +1,64 @@
+<div class="dev" id={{role}}>
+   {{!-- <form class='login' method='GET' action='/home/device'>
+          <div class='login'>
+            <h1 class="">Choose your device bellow</h1>
+            <div class="dev-se">
+              <select name='idDev' class='login__input login__input--user'>
+                {{#each objDev}}
+                  <option value={{this.id}}>{{this.ip}}</option>
+                {{/each}}
+              </select>
+              <button class='btn--device'>&rarr;</button>
+            </div>
+          </div>
+    </form> --}}
+    <div class="header__title">
+            <!-- <h1 onclick="alert('HTML alert')"> -->
+            <h1>
+              SYSTEM 
+              <!-- Green highlight effect -->
+              <span class="highlight">MANAGEMENT</span> OF<br /> IIoT PRODUCTION 
+              <span class="highlight"> STATIONS</span>
+            </h1>
+
+            <form class='login form-dev' method='GET'>
+              <div class='login'>
+                <h4 class="text--se-dev">Choose your device here</h4>
+                <div class="dev-se">
+                  <select name='idDev' class='login__input login__input--user'>
+                
+                    {{#each objDev}}
+                      <option value={{this.id}}>{{this.ip}}</option>
+                    {{/each}}
+                  </select>
+                  <button class='btn--app'>&rarr;</button>
+                </div>
+              </div>
+            </form>
+
+            
+            <img
+              src="https://lh5.googleusercontent.com/p/AF1QipNTS8UEk4K6_R_NPMbg8vErfDc-T3RDOJ828aXP=w408-h255-k-no"
+              class="header__img"
+              alt="Minimalist bank items"
+            />
+            {{!-- choose dev --}}
+            
+    </div>
+</div>
+
+<script src='/socket.io/socket.io.js'></script>
+<script>
+  document.addEventListener('DOMContentLoaded', async function(){ 
+  const btnChooseDev = document.querySelector('.btn--app');
+  const role = document.querySelector('.dev').id;
+  const editForm = document.querySelector('.form-dev');
+
+  //change link form
+  editForm.setAttribute('action',`/${role}/home`);
+  if (role ==='manager' || role ==='operator' || role ==='viewer') editForm.setAttribute('action',`/register/home`);;
+  btnChooseDev.addEventListener('click',(e)=>{
+    alert('Selected device!!');
+  })
+ });
+</script>

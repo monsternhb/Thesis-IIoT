@@ -1,0 +1,27 @@
+.tablex {
+    width: 100%;
+    height: 34px;
+    display: flex;
+    justify-content: space-around;
+    margin: 0 8px;
+    border: 1px solid var(--light-background);
+    border-radius: 4px;
+  }
+  
+.table__header {
+    background-color: #ffe8aa;
+}
+  
+.table__id,
+.table__time,
+.table__controller,
+.table__subject,
+.table__alarm,
+.table__name,
+.table__role {
+    line-height: 34px;
+    font-size: 1.4rem;
+    font-weight: 400;
+    margin-left: 10px;
+    flex: 1;
+}

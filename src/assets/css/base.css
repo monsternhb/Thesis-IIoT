@@ -1,0 +1,111 @@
+:root {
+  --white-color: #fff;
+  --black-color: #000;
+  --text-color: #615551;
+  --main-color: #f38e82;
+  --light-text: #d3c7c3;
+  --light-background: #f9f5f3;
+  --grad-1: #fbdb89;
+  --grad-2: #f48982;
+  --color-background: linear-gradient(to right, var(--grad-1), var(--grad-2));
+  --btn-background: linear-gradient(to right, var(--grad-1), var(--grad-2));
+}
+
+* {
+  box-sizing: inherit;
+  margin: 0;
+}
+
+html {
+  font-size: 62.5%;
+  line-height: 1.6rem;
+  font-family: 'Roboto', sans-serif;
+  box-sizing: border-box;
+}
+
+/* Responsive */
+
+.grid {
+  overflow: hidden;
+  /* width: 1200px; */
+  /* height: 506px; */
+  /* max-width: 100%; */
+  /* tu dong can giua */
+  margin: 0 auto;
+  padding-left: 100px;
+  padding-right: 100px;
+
+  
+
+}
+
+.grid__full-width {
+  width: 100%;
+}
+
+.bieudo{
+  width: 300px;
+}
+
+.grid__row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -12px;
+  margin-right: -12px;
+}
+
+.grid__column-2 {
+  width: 16.6667%;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+.grid__column-10 {
+  width: 100%;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+.grid__column-2-5 {
+  width: 20%;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+
+
+.grid__column-2-4 {
+  width: 40%;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+.grid__column-2-6 {
+  width: 60%;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+.grid__column-product {
+  width: 33%;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+.grid__column-2-3 {
+  width: 40%;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+.grid__column-3 {
+  width: 30%;
+  padding-left: 18px;
+  padding-right: 12px;
+}
+
+.grid__column-7 {
+  width: 64%;
+  padding-left: 12px;
+  padding-right: 12px;
+}

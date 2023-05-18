@@ -1,0 +1,127 @@
+{{!-- <div class='grid__column-2'>
+  <div class='nav__header'>
+    <div
+      class='nav__logo-img'
+      style='
+                    background-image: url(data:image/png;base64,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);
+                  '
+    ></div>
+    <div class='nav__heading'>height classification</div>
+    <ul class='nav__list'>
+      <li class='nav__item'>
+        <a href='/home/device' class='nav__link'><i
+            class='nav__icon fa-solid fa-house'
+          ></i>Home page
+        </a>
+      </li>
+
+      <li class='nav__item'>
+        <a href='/history' class='nav__link'><i
+            class='nav__icon fa-solid fa-coins'
+          ></i>History</a>
+      </li>
+
+      <li class='nav__item'>
+        <a href='/alarm' class='nav__link'><i
+            class='nav__icon fa-solid fa-bell'
+          ></i>Alarm</a>
+      </li>
+
+      <li class='nav__item'>
+        <a href='/register' class='nav__link'><i
+            class='nav__icon fa-solid fa-address-card'
+          ></i>Register</a>
+      </li>
+
+      <li class='nav__item'>
+        <a href='/device' class='nav__link'><i
+            class='nav__icon fa-solid fa-address-card'
+          ></i>Device</a>
+      </li>
+
+    </ul>
+  </div>
+</div> --}}
+
+<!-- header -->
+<header class="header">
+      <nav class="nav" >
+        <img
+          src="https://cdn.haitrieu.com/wp-content/uploads/2021/09/Logo-DH-Bach-Khoa-HCMUT.png"
+          alt="BK logo"
+          class="nav__logo"
+          id="logo"
+          designer="Jonas"
+          data-version-number="3.0"
+        />
+        <ul class="nav__links">
+          <li class="nav__item ">
+            <a class="nav__link home" >Home</a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link history" >History</a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link alarm" >Alarm</a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link device" >Device</a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link nav__link--btn btn--show-modal btn--nav register" 
+              >Register</a>
+          </li>
+          <li class="nav__item">
+            <button class="btn--log-out btn--nav" id={{role}}>Log out</button>
+          </li>
+        </ul>
+      </nav>
+      <hr class="gach-ngang" width="90%" align="center" />
+</header>
+
+{{#if devIp}}
+  <div class="alert alert-light noti__dev" role="alert">
+    {{devIp}}
+  </div>
+{{else}}
+  <div class="alert alert-light noti__dev" role="alert">
+    Click here to select your device!!
+  </div>
+{{/if}}
+
+<form method="GET" action="/home/logout" name = 'form__log-out'></form>
+
+<script>
+  document.addEventListener('DOMContentLoaded',function(){
+      const btnLogOut = document.querySelector('.btn--log-out');
+      const formLogOut=document.forms['form__log-out'];
+      const role = btnLogOut.id;
+      console.log(`Login by a ${role}`);
+
+      //edit link 
+      const editHome = document.querySelector('.home');
+      const editHistory = document.querySelector('.history');
+      const editAlarm = document.querySelector('.alarm');
+      const editDevice = document.querySelector('.device');
+      const editRegister = document.querySelector('.register');
+
+      editHome.setAttribute('href',`/${role}/home`);
+      editHistory.setAttribute('href',`/${role}/history`);
+      editAlarm.setAttribute('href',`/${role}/alarm`);
+      editDevice.setAttribute('href',`/${role}/device`);
+      editRegister.setAttribute('href',`/${role}/register`);
+
+      if (role === 'manager' || role === 'operator' || role === 'viewer'){
+        editHome.setAttribute('href',`/register/home`);
+        editHistory.setAttribute('href',`/register/history`);
+        editAlarm.setAttribute('href',`/register/alarm`);
+        editDevice.setAttribute('href',`/register/device`);
+        editRegister.setAttribute('href',`/register/register`);
+      } 
+
+    if (role === 'viewer') editRegister.classList.add('hidden');
+      btnLogOut.addEventListener('click',function(){
+        formLogOut.submit();
+      })
+  })
+</script>

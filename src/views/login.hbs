@@ -1,0 +1,52 @@
+<div class='modal'>
+  <div class='modal__overlay'></div>
+  <div class='modal__body'>
+    <div class='modal__login'>
+      <div class='login__header'>LOGIN</div>
+      <form method='POST' action='/login'>
+        <div class='login__group'>
+          <label for='user_name'></label>
+            <input
+              type='text'
+              placeholder='User name'
+              class='login__user'
+              name='user_login'
+            />
+          </div>
+          <label for='pass_word'></label>
+            <input
+              type='password'
+              placeholder='PIN'
+              minlength='3'
+              class='login__pass'
+              name='pass_login'
+            />
+        </div>
+        <div class="login__button">
+          <button class='btn__login'>LOGIN</button>
+        </div>
+      </form>
+
+    </div>
+  </div>
+</div>
+
+{{!-- <div class="nav__login">
+      <p class="welcome">Log in to get started</p>
+      <img src="logo.png" alt="Logo" class="logo" />
+      <form class="login">
+        <input
+          type="text"
+          placeholder="user"
+          class="login__input login__input--user"
+        />
+        <!-- In practice, use type="password" -->
+        <input
+          type="text"
+          placeholder="PIN"
+          maxlength="4"
+          class="login__input login__input--pin"
+        />
+        <button class="login__btn">&rarr;</button>
+      </form>
+</div> --}}

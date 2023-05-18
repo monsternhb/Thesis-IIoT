@@ -1,0 +1,88 @@
+<div class='reg__page grid__column-10'>
+  <div class='reg_control'>
+    <div class='grid__row'>
+      <div class='grid__column-2 form-reg'>
+        <p class='welcome'>Allocating device</p>
+        <form class='login' method='POST' action='/admin/save'>
+
+          <div class='login'>
+            <label for='user_name'></label>
+            <input
+              type='text'
+              placeholder='Manager name'
+              class='login__input login__input--user'
+              id='user_name'
+              name='user_name'
+            />
+          </div>
+
+          <!-- In practice, use type="password" -->
+          <div class='login'>
+            <label for='pass_word'></label>
+            <input
+              type='password'
+              placeholder='PIN'
+              minlength='3'
+              class='login__input login__input--pin'
+              id='pass'
+              name='pass_word'
+            />
+            <input
+              type='password'
+              placeholder='Confirm'
+              minlength='3'
+              class='login__input login__input--pin'
+              name="confirm"
+            />
+          </div>
+
+          <div class='login'>
+            <label for='name'></label>
+            <input
+              type='text'
+              placeholder='Company'
+              class='login__input login__input--user'
+              name='name'
+            />
+          </div>
+
+          <div class='login device'>
+            <label for='devices'></label>
+            <input
+              type='text'
+              placeholder='ip devices'
+              class='login__input login__input--user'
+              name='devices'
+            />
+          </div>
+          <button class='login__btn'>&rarr;</button>
+        </form>
+      </div>
+
+      <div class='grid__column-2-3'>
+        <div class='reg__table'>
+          <div class='grid__row'>
+            <!-- table tittle -->
+            <div class='table table__header'>
+              {{!-- <span class='table__id'>ID</span> --}}
+              <span class='table__name'>Company</span>
+              <span class='table__role'>Name</span>
+              <span class='table__role'>Devices</span>
+            </div>
+
+            <!-- Table data -->
+            {{#each acc}}
+            <div class='table table__data'>
+            {{!-- <span class='table__id'>{{this._id}}</span> --}}
+            <span class='table__name'>{{this.name}}</span>
+            <span class='table__role'>{{this.user_name}}</span>
+            <span class='table__role'>{{this.devices}}</span>
+            </div>
+
+            {{/each}}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

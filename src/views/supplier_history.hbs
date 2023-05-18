@@ -1,0 +1,178 @@
+<!-- History page -->
+<div class='history__page grid__column-10'>
+  <div class='history__control'>
+    <div class='grid__row'>
+      <div class='history__btn'>
+        <button class='btn__primary btn__history2 btn__history'>
+          view total products
+        </button>
+        <button class='btn__primary btn__history3 btn__history'>Export</button>
+      </div>
+    </div>
+  </div>
+
+  <div class='history__option'>
+    <div class='grid__row'>
+      <form action='' class='form-option'>
+        <span class='option-text'>Date from</span>
+        <input type='date' class='date-from' placeholder='dd/mm/yy'/>
+        <span class='option-text'>Date to</span>
+        <input type='date' class='date-from' placeholder='dd/mm/yy'/>
+        <button class='btn--app'><i class="fa fa-search" aria-hidden="true"></i></button>
+      </form>
+    </div>
+  </div>
+
+  <div class='history__table'>
+    <div class='grid__row'>
+      <!-- table tittle -->
+      <div class='table table__header'>
+        <span class='table__col'>Number</span>
+        <span class='table__col'>Company</span>
+        <span class='table__col'>Time</span>
+        <span class='table__col'>Behavior</span>
+      </div>
+
+      <!-- Table data -->
+      
+        <div class='table table__data'>
+          <span class='table__col'>1</span>
+          <span class='table__col'>HCMUT</span>
+          <span class='table__col'>12-12-2022</span>
+          <span class='table__col'>Click a from web client</span>
+        </div>
+      
+
+    </div>
+  </div>
+
+                  
+  <div class="pagination pagination__list pagination-centered">
+    <nav aria-label="Page navigation example">
+      <ul class="pagination">
+        <li class="page-item">
+          <a class="page-link" href="#" aria-label="Previous">
+            <span aria-hidden="true">&laquo;</span>
+          </a>
+        </li>
+        {{#times pagination.numPage}}
+            <li class="page-item"><a class="page-link" href="?page={{this}}">{{this}}</a></li>
+        {{/times}}
+        <li class="page-item">
+          <a class="page-link" href="#" aria-label="Next">
+            <span aria-hidden="true">&raquo;</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+                  
+
+                
+  </ul>
+</div>
+
+
+
+{{!-- <script>
+  document.addEventListener('DOMContentLoaded', async function(){ 
+
+    //handle pagination
+    //get number of page and page current
+    let numberPages = Number(document.querySelector(".pagination__list").id);
+    let curPage = Number(document.querySelector(".current__page").id);
+    
+    //render pagination button with href relative
+    const paginationContainer = document.querySelector(".pagination__list");
+
+    function addPagi(html){
+      paginationContainer.insertAdjacentHTML('beforeEnd',html);
+    }
+
+
+    let html = `<li class="pagination__item continue__item pagi-left">
+                    <a href="#" class="pagination__link"
+                      ><i class="fas fa-angle-left"></i
+                    ></a>
+                  </li>`
+    addPagi(html);
+
+
+    let flagPagination = true;
+    
+    for(let i = 1; i <= numberPages; i++){
+      if ((i>4 && i < (numberPages-2))){
+        if(flagPagination){
+          html = `<li class="pagination__item">
+                        <a href="#" class="pagination__link">...</a>
+                      </li>`
+          addPagi(html);
+
+          html = `<li class="pagination__item" data-page = ${i}>
+                        <a href="/history?page=${i}" class="pagination__link hidden--link-page">${i}</a>
+                      </li>`
+          addPagi(html);
+
+          flagPagination = false;
+        }else{
+          html = `<li class="pagination__item" data-page = ${i}>
+                        <a href="/history?page=${i}" class="pagination__link hidden--link-page">${i}</a>
+                      </li>`
+          addPagi(html);
+        }
+      } 
+      else{
+        if (i<=4 || i >= (numberPages-2)){
+           html = `<li class="pagination__item item-number" data-page = ${i}>
+                          <a href="/history?page=${i}" class="pagination__link">${i}</a>
+                        </li>`
+          addPagi(html);
+        }
+        } 
+    }
+
+    html = `<li class="pagination__item continue__item pagi-right">
+                    <a href="#" class="pagination__link"
+                      ><i class="fas fa-angle-right"></i
+                    ></a>
+                  </li>`
+    addPagi(html); 
+
+
+
+    // click > -> curPage++ and so on
+    const btnPagLeft = document.querySelector('.pagi-left');
+    const btnPagRight = document.querySelector('.pagi-right');
+
+    btnPagLeft.addEventListener('click',(e)=>{
+      curPage--;
+      const a = document.querySelectorAll(`[data-page = ${curPage}]`);
+      a.click();
+    })
+
+    btnPagRight.addEventListener('click',(e)=>{
+      curPage++;
+      const a = document.querySelectorAll(`[data-page = ${curPage}]`);
+      console.log(a);
+      a.click();
+    })
+
+
+   // active page 
+   const whereActivePage = document.querySelectorAll('.item-number');
+
+   whereActivePage.forEach(pag => {
+    pag.classList.remove('pagination__item--active');
+    const pageNum = Number(pag.dataset.page);
+    if( pageNum === curPage ){
+      pag.classList.add('pagination__item--active');
+    }
+
+   })
+
+  
+
+
+  })
+
+</script> --}}

@@ -1,0 +1,686 @@
+<div class='home__page grid__column-10'>
+  <div class='home__control' id={{role}}>
+    <div class='grid__row'>
+      <!-- Hand mode -->
+      <div class='grid__column-2-5'>
+        <div class='home__mode ccc' id={{userName}}>
+          <div class='home__mode-hand-mode'>
+            <div class='mode__tittle bbb' id={{devId}}>Hand mode</div>
+            <div class='mode__container aaa' id={{userId}}>
+              <button class='btn__primary btn--hand btn--home'>Motor On</button>
+              <button class='btn__primary btn--hand btn--home' >Motor Off</button>
+              <button class='btn__primary btn--hand btn--home'>Push Out</button>
+              <button class='btn__primary btn--hand btn--home'>Pull Back</button>
+              <button class='btn__primary btn--hand btn--home'>Left Down</button>
+              <button class='btn__primary btn--hand btn--home'>Left Up</button>
+              <button class='btn__primary btn--hand btn--home'>Hold On</button>
+              <button class='btn__primary btn--hand btn--home'>Hold Off</button>
+              <button class='btn__primary btn--hand btn--home'>Go Out</button>
+              <button class='btn__primary btn--hand btn--home'>Go Back</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Dash board -->
+      <div class='grid__column-2-5'>
+        <div class='home__mode'>
+          <div class='home__mode-dashboard'>
+            <div class='mode__tittle'>Dashboard</div>
+            <div class='mode__container container--dash'>
+
+              <div class='btn__dash'>
+                <button class='btn__primary btn--dash btn--home' style="background-color:#5ec576;" ></button>
+                <p class='btn__dash-text'>Start</p>
+              </div>
+
+              <div class='btn__dash'>
+                <button class='btn__primary btn--dash btn--home' style="background-color:#fd424b;"></button>
+                <p class='btn__dash-text'>Stop</p>
+              </div>
+
+              <div class='btn__dash'>
+                <button
+                  class='btn__primary btn--dash btn--home btn--edit1 ' style="background-color:#f57723e3;"
+                ></button>
+                <p class='btn__dash-text'>Emergency</p>
+              </div>
+
+              <div class='btn__dash'>
+                <button
+                  class='btn__primary btn--dash btn--home btn--edit2' style="background-color:#ffcb03;"
+                ></button>
+                <p class='btn__dash-text text-reset'>Reset</p>
+              </div>
+
+              <div class='form-box'>
+                <div class='button-box'>
+                  <div id='btn--switch'></div>
+                  <button
+                    type='button'
+                    class='toggle-btn sw--left btn__primary'
+                  >Man</button>
+                  <button
+                    type='button'
+                    class='toggle-btn sw--right btn__primary'
+                  >Auto</button>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Type product -->
+      <div class='grid__column-2-5'>
+        <div class='home__mode'>
+          <div class='mode__tittle'>Type of Product</div>
+          <div class='home__mode-type-product'>
+            <div class='home__type-product'>
+              <i class='icon__type type1 fa-solid fa-lightbulb'></i>
+              Type 1
+            </div>
+            <div class='home__type-product'>
+              <i class='icon__type type2 fa-solid fa-lightbulb'></i>
+              Type 2
+            </div>
+            <div class='home__type-product'>
+              <i class='icon__type type3 fa-solid fa-lightbulb'></i>
+              Type 3
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--Home notification-->
+      <div class='grid__column-2-4'>
+        <div class='home__mode'>
+          <div class='home__mode-noty-light'>
+            <div class='noty'>
+              <i class='noty__icon fa-solid fa-circle ic-man'></i>
+              <p class='noty__text'>Man</p>
+            </div>
+            <div class='noty'>
+              <i class='noty__icon fa-solid fa-circle ic-auto'></i>
+              <p class='noty__text'>Auto</p>
+            </div>
+
+            <div class='noty'>
+              <i class='noty__icon fa-solid fa-circle ic-run'></i>
+              <p class='noty__text'>Run</p>
+            </div>
+
+            <div class='noty'>
+              <i class='noty__icon fa-solid fa-circle ic-alarm ' ></i>
+              <p class='noty__text'>Alarm</p>
+            </div>
+          </div>
+          <div class='home__mode-noty-desc'>
+            <div class='mode__tittle'>Notifications</div>
+          </div>
+
+          <span class='color-noti'>Welcome</span>
+
+        </div>
+      </div>
+
+      <div class='grid__column-2-4 edit-panel'>
+        <div class='home__mode total--edit'>
+          <div class='mode__tittle'>Total products</div>
+          <!-- Each product count -->
+          <div class='grid__row'>
+            <div class='grid__column-product'>
+              <p class='text__total'>Total product 1</p>
+              <i class='icon__total fa-solid fa-box-open'></i>
+              <input
+                type='text'
+                class='total__setting'
+                id='total1'
+                placeholder='Number total'
+              />
+              <p class='current__count count-sp1'>0</p>
+            </div>
+
+            <div class='grid__column-product'>
+              <p class='text__total'>Total product 2</p>
+              <i class='icon__total fa-solid fa-box-open'></i>
+
+              <input
+                type='text'
+                class='total__setting'
+                id='total2'
+                placeholder='Number total'
+              />
+
+              <p class='current__count count-sp2'>0</p>
+            </div>
+
+            <div class='grid__column-product'>
+              <p class='text__total'>Total product 3</p>
+              <i class='icon__total fa-solid fa-box-open'></i>
+              <input
+                type='text'
+                class='total__setting'
+                id='total3'
+                placeholder='Number total'
+              />
+              <p class='current__count count-sp3'>0</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class='grid__column-2-6 edit-panel'>
+        <div class='home__mode total--edit'>
+          <div class='mode__tittle'>Color threshole</div>
+          <!-- Each product count -->
+          <div class='grid__row color-eee'>
+            <div class="grid__column-3 doc ">
+              <div class="color"> <span>Color of product 1 <i class="fa fa-circle tron tron1" aria-hidden="true"></i></span> </div> 
+              <div class="color"><span> Color of product 2 <i class="fa fa-circle tron tron2" aria-hidden="true"></i> </span> </i> </div>
+              <div class="color"> <span>Color of product 3 <i class="fa fa-circle tron tron3" aria-hidden="true"></i></span>  </div>
+            </div>
+
+
+
+            <div class="grid__column-7">
+                <div class='table table__header'>
+                  <span class='table__id'>H_min</span>
+                  <span class='table__time'>H_max</span>
+                  <span class='table__controller'>S_min</span>
+                  <span class='table__controller'>S_max</span>
+                  <span class='table__controller'>V_min</span>
+                  <span class='table__controller'>V_max</span>
+
+
+                </div>
+
+                <div class='table table__data'>
+                  <span class='table__id h1min'>0</span>
+                  <span class='table__time h1max'>0</span>
+                  <span class='table__controller s1min'>0</span>
+                  <span class='table__controller s1max'>0</span>
+                  <span class='table__controller v1min'>0</span>
+                  <span class='table__controller v1max'>0</span>
+                </div>
+
+                <div class='table table__data'>
+                  <span class='table__id h2min'>0</span>
+                  <span class='table__time h2max'>0</span>
+                  <span class='table__controller s2min'>0</span>
+                  <span class='table__controller s2max'>0</span>
+                  <span class='table__controller v2min'>0</span>
+                  <span class='table__controller v2max'>0</span>
+                </div>
+
+                <div class='table table__data'>
+                  <span class='table__id h3min'>0</span>
+                  <span class='table__time h3max'>0</span>
+                  <span class='table__controller s3min'>0</span>
+                  <span class='table__controller s3max'>0</span>
+                  <span class='table__controller v3min'>0</span>
+                  <span class='table__controller v3max'>0</span>
+                </div>
+
+
+
+            </div>
+
+
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+<script src='/socket.io/socket.io.js'></script>
+<script>
+  document.addEventListener('DOMContentLoaded', async function(){ 
+  const userName = await document.querySelector('.ccc').id;
+  const devId = await document.querySelector('.bbb').id;
+  const userId = await document.querySelector('.aaa').id;
+  const icAlarm = document.querySelector('.ic-alarm');
+
+  // handle  switch 
+  const btnSwitch = document.getElementById('btn--switch'); 
+  const btnSwleft = document.querySelector('.sw--left'); 
+  const btnSwright = document.querySelector('.sw--right');
+ 
+
+  btnSwleft.addEventListener('click',(e)=>{ btnSwitch.style.left = '0'; })
+  btnSwright.addEventListener('click',(e)=>{ btnSwitch.style.left = '50px'; })
+
+  const formNewHis=document.forms['form__cre-his']; 
+  const container =document.querySelector('.home__control'); 
+  let input = document.querySelectorAll('.total__setting'); 
+  
+
+  // alarm full product and send to mqtt
+  input.forEach((inp) =>inp.addEventListener('change', (e)=> { 
+  // total1 -- total2 --total3 
+  const publicName = inp.id; 
+  const publicValue = inp.value; 
+  // send to server -> mqtt
+
+  socket.emit('total each product', 
+    {publicName: publicName, publicValue: publicValue} ); })); 
+    
+  // get role of user 
+  
+  const role = await container.id;
+  const socket = io(); 
+
+  // render number of current product from sever socket emit //count sp1 
+  let numPro1Cur = 0;
+  let numPro2Cur = 0;
+  let numPro3Cur = 0;
+  let numPro1Set = 0;
+  let numPro2Set = 0;
+  let numPro3Set = 0;
+
+
+  socket.on('currentSp1', function(msg) { 
+    const countSp1 = document.querySelector('.count-sp1'); countSp1.textContent = msg; 
+    const total1 = document.getElementById('total1');
+    msg = msg*1;
+    total = total1.value*1;
+    numPro1Cur = msg;
+    numPro1Set = total;
+
+    if (msg >= total){
+      socket.emit('alarm_full-sp1', 'Product 1 is full!');
+      icAlarm.classList.add('ic-yellow');
+      axios.post(`/alarm/device/${devId}/${userName}/${userId}`, { subject: 'Product 1 is full!' , deviceId: devId }) 
+      .then((res)=>{} )
+      .catch(function (error) { console.log(error.message); });
+
+      const colorText= document.querySelector('.color-noti');
+        colorText.textContent = 'Product 1 is full!';
+    }
+
+    let currentPro= [numPro1Cur, numPro2Cur, numPro3Cur];
+    let setPro= [numPro1Set, numPro2Set, numPro3Set];
+
+    axios.post(`/history/product/${devId}/${userName}/${userId}`, { currentPro, setPro , device: devId }) 
+      .then((res)=>{} )
+      .catch(function (error) { console.log(error.message); })
+
+    }); 
+  
+  //count sp2 
+  
+  socket.on('currentSp2', function(msg) { 
+    const countSp2 = document.querySelector('.count-sp2'); 
+    countSp2.textContent = msg; 
+    const total2 = document.getElementById('total2');
+    msg = msg*1;
+    total = total2.value*1;
+    numPro2Cur = msg;
+    numPro2Set = total;
+
+    if (msg >= total){
+      socket.emit('alarm_full-sp2', 'Product 2 is full!');
+      icAlarm.classList.add('ic-yellow');
+      axios.post(`/alarm/device/${devId}/${userName}/${userId}`, { subject: 'Product 2 is full!' , deviceId: devId }) 
+      .then((res)=>{} )
+      .catch(function (error) { console.log(error.message); });
+
+       const colorText= document.querySelector('.color-noti');
+        colorText.textContent = 'Product 2 is full!';
+    }
+
+    let currentPro= [numPro1Cur, numPro2Cur, numPro3Cur];
+    let setPro= [numPro1Set, numPro2Set, numPro3Set];
+
+    axios.post(`/history/product/${devId}/${userName}/${userId}`, { currentPro, setPro , device: devId }) 
+      .then((res)=>{} )
+      .catch(function (error) { console.log(error.message); })
+
+    }); 
+    
+  //count sp3 
+  socket.on('currentSp3', function(msg) { 
+    const countSp3 = document.querySelector('.count-sp3'); countSp3.textContent = msg; 
+    const total3 = document.getElementById('total3');
+    msg = msg*1;
+    total = total3.value*1;
+    numPro3Cur = msg;
+    numPro3Set = total;
+
+    if (msg >= total){
+      socket.emit('alarm_full-sp3', 'Product 3 is full!');
+      icAlarm.classList.add('ic-yellow');
+      axios.post(`/alarm/device/${devId}/${userName}/${userId}`, { subject: 'Product 3 is full!' , deviceId: devId }) 
+      .then((res)=>{} )
+      .catch(function (error) { console.log(error.message); });
+       const colorText= document.querySelector('.color-noti');
+        colorText.textContent = 'Product 3 is full!';
+    }
+      let currentPro= [numPro1Cur, numPro2Cur, numPro3Cur];
+      let setPro= [numPro1Set, numPro2Set, numPro3Set];
+
+    axios.post(`/history/product/${devId}/${userName}/${userId}`, { currentPro, setPro , device: devId }) 
+      .then((res)=>{} )
+      .catch(function (error) { console.log(error.message); })
+    }); 
+  
+  //pos1
+   socket.on('type1', function(msg) { 
+    const type1 = document.querySelector('.type1');
+    if(msg==='1'){
+      type1.classList.add('type--active');
+      setTimeout(() => {type1.classList.remove('type--active');}, 2.0 * 1000);
+    }
+  });
+
+  //pos2
+   socket.on('type2', function(msg) { 
+    const type2 = document.querySelector('.type2'); 
+    if (msg==='2'){
+      type2.classList.add('type--active');
+      setTimeout(() => {type2.classList.remove('type--active');}, 2.0 * 1000);
+    }
+  });
+
+  //pos3
+   socket.on('type3', function(msg) { 
+    const type3 = document.querySelector('.type3'); 
+    if (msg==='3'){
+      type3.classList.add('type--active');
+      setTimeout(() => {type3.classList.remove('type--active');}, 2.0 * 1000);
+    }
+  });
+
+  //state
+  const icMan = document.querySelector('.ic-man');
+  const icAuto = document.querySelector('.ic-auto');
+  const icRun = document.querySelector('.ic-run');
+  
+
+   socket.on('man', function(msg) {
+    if (msg == 'true'){
+      icAuto.classList.remove('ic-green');
+      icMan.classList.add('ic-green');
+    }
+  }); 
+
+  socket.on('auto', function(msg) {
+    if (msg == 'true'){
+      icMan.classList.remove('ic-green');
+      icAuto.classList.add('ic-green');
+    }
+  }); 
+
+  socket.on('run', function(msg) {
+    if (msg == 'true'){
+      icRun.classList.add('ic-green');
+    }else{
+      icRun.classList.remove('ic-green');
+
+    }
+  }); 
+
+  socket.on('alarm_no-sp', function(msg) {
+    if (msg == 'nosp'){
+      const colorText= document.querySelector('.color-noti');
+      colorText.textContent = 'No product';
+      icAlarm.classList.add('ic-yellow');
+      }
+  });
+
+  socket.on('alarm_undef_color', function(msg) {
+      const colorText= document.querySelector('.color-noti');
+    if (msg == 'true'){
+      colorText.textContent = 'Undefine color';
+      icAlarm.classList.add('ic-yellow');
+      }
+    else{
+      colorText.textContent = 'Active';
+      icAlarm.classList.remove('ic-yellow');
+
+    }
+  });
+
+  socket.on('alarm_wait_reset', function(msg) {
+      const colorText= document.querySelector('.color-noti');
+    if (msg == 'true'){
+      icAlarm.classList.add('ic-yellow');
+      colorText.textContent = 'Xylanh not reset';
+      }
+    else{
+      icAlarm.classList.remove('ic-yellow');
+      colorText.textContent = 'Active';
+    }
+  });
+  
+
+
+  // update parameter of color 
+    socket.on('H1_min', function(msg) { 
+    const h1min = document.querySelector('.h1min'); 
+    h1min.textContent = msg;
+  });
+
+  socket.on('H1_max', function(msg) { 
+    const h1max = document.querySelector('.h1max'); 
+    h1max.textContent = msg;
+  });
+
+  socket.on('S1_max', function(msg) { 
+    const s1max = document.querySelector('.s1max'); 
+    s1max.textContent = msg;
+  });
+
+  socket.on('S1_min', function(msg) { 
+    const s1min = document.querySelector('.s1min'); 
+    s1min.textContent = msg;
+  });
+
+  socket.on('V1_min', function(msg) { 
+    const v1min = document.querySelector('.v1min'); 
+    v1min.textContent = msg;
+  });
+
+  socket.on('V1_max', function(msg) { 
+    const v1max = document.querySelector('.v1max'); 
+    v1max.textContent = msg;
+  });
+
+  socket.on('H2_min', function(msg) { 
+    const h2min = document.querySelector('.h2min'); 
+    h2min.textContent = msg;
+  });
+
+  socket.on('H2_max', function(msg) { 
+    const h2max = document.querySelector('.h2max'); 
+    h2max.textContent = msg;
+  });
+
+  socket.on('S2_max', function(msg) { 
+    const s2max = document.querySelector('.s2max'); 
+    s2max.textContent = msg;
+  });
+
+  socket.on('S2_min', function(msg) { 
+    const s2min = document.querySelector('.s2min'); 
+    s2min.textContent = msg;
+  });
+
+  socket.on('V2_min', function(msg) { 
+    const v2min = document.querySelector('.v2min'); 
+    v2min.textContent = msg;
+  });
+
+  socket.on('V2_max', function(msg) { 
+    const v2max = document.querySelector('.v2max'); 
+    v2max.textContent = msg;
+  });
+
+  socket.on('H3_min', function(msg) { 
+    const h3min = document.querySelector('.h3min'); 
+    h3min.textContent = msg;
+  });
+
+  socket.on('H3_max', function(msg) { 
+    const h3max = document.querySelector('.h3max'); 
+    h3max.textContent = msg;
+  });
+
+  socket.on('S3_max', function(msg) { 
+    const s3max = document.querySelector('.s3max'); 
+    s3max.textContent = msg;
+  });
+
+  socket.on('S3_min', function(msg) { 
+    const s3min = document.querySelector('.s3min'); 
+    s3min.textContent = msg;
+  });
+
+  socket.on('V3_min', function(msg) { 
+    const v3min = document.querySelector('.v3min'); 
+    v3min.textContent = msg;
+  });
+
+  socket.on('V3_max', function(msg) { 
+    const v3max = document.querySelector('.v3max'); 
+    v3max.textContent = msg;
+  });
+
+  // color notifications
+  socket.on('color', function(msg) { 
+    const colorText= document.querySelector('.color-noti');
+    colorText.textContent = msg;
+    const myTimeout = setTimeout(myGreeting, 2000);
+    function myGreeting() {
+      colorText.textContent = "Active";
+    //clearTimeout(myTimeout);
+    }
+  });
+
+  socket.on('color_of_type1', function(msg) { 
+    const color1= document.querySelector('.tron1');
+    if (msg==='1'){
+      color1.style.color= 'red';
+    }else if(msg==='2'){
+      color1.style.color= 'yellow';
+    }else if(msg==='3'){
+      color1.style.color= 'blue';
+    }else if(msg==='4'){
+      color1.style.color= 'purple';
+    }else if(msg==='5'){
+      color1.style.color= 'brown';
+    }else if(msg==='6'){
+      color1.style.color= 'pink';
+    }else if(msg==='7'){
+      color1.style.color= 'orange';
+    }else if(msg==='8'){
+      color1.style.color= 'black';
+    }else if(msg==='9'){
+      color1.style.color= 'gray';
+    }else{
+      color1.style.color= 'white';
+    }
+  });
+
+  socket.on('color_of_type2', function(msg) { 
+    const color2= document.querySelector('.tron2');
+    if (msg==='1'){
+      color2.style.color= 'red';
+    }else if(msg==='2'){
+      color2.style.color= 'yellow';
+    }else if(msg==='3'){
+      color2.style.color= 'blue';
+    }else if(msg==='4'){
+      color2.style.color= 'purple';
+    }else if(msg==='5'){
+      color2.style.color= 'brown';
+    }else if(msg==='6'){
+      color2.style.color= 'pink';
+    }else if(msg==='7'){
+      color2.style.color= 'orange';
+    }else if(msg==='8'){
+      color2.style.color= 'black';
+    }else if(msg==='9'){
+      color2.style.color= 'gray';
+    }else{
+      color2.style.color= 'white';
+    }
+  });
+
+  socket.on('color_of_type3', function(msg) { 
+    const color3= document.querySelector('.tron3');
+    if (msg==='1'){
+      color3.style.color= 'red';
+    }else if(msg==='2'){
+      color3.style.color= 'yellow';
+    }else if(msg==='3'){
+      color3.style.color= 'blue';
+    }else if(msg==='4'){
+      color3.style.color= 'purple';
+    }else if(msg==='5'){
+      color3.style.color= 'brown';
+    }else if(msg==='6'){
+      color3.style.color= 'pink';
+    }else if(msg==='7'){
+      color3.style.color= 'orange';
+    }else if(msg==='8'){
+      color3.style.color= 'black';
+    }else if(msg==='9'){
+      color3.style.color= 'gray';
+    }else{
+      color3.style.color= 'white';
+    }
+  });
+
+
+  
+
+  
+
+
+
+
+  if (role=== 'viewer'){ 
+    // config viewer 
+    
+    const btns = document.querySelectorAll('.btn__primary'); 
+    
+    btns.forEach(btn => { 
+      btn.classList.remove('btn--home'); 
+      btn.classList.add('btn--disable'); })}
+
+  else{ 
+
+    // handle button 
+    container.addEventListener('click',function(e){
+      e.preventDefault(); 
+      const btn = e.target.closest('.btn__primary'); 
+
+      if (!btn) return; 
+      let behavior = btn.textContent.trim(); 
+      if (!behavior) behavior = btn.closest('.btn__dash').lastElementChild.textContent.trim(); 
+      behavior = behavior.toLowerCase(); 
+      
+      console.log(behavior); 
+      // send to server -> mqtt
+      socket.emit('control plc', behavior ); 
+      // post creat history 
+      const mess =  `Click ${behavior} from Web Client`; 
+      axios.post(`/history/device/${devId}/${userName}/${userId}`, { behavior: mess , device: devId }) 
+      .then((res)=>{} )
+      .catch(function (error) { console.log(error.message); });
+  }); 
+  }
+  });
+</script>

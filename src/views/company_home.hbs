@@ -1,0 +1,261 @@
+<div class='reg__page grid__column-10'>
+  <div class='reg_control'>
+    <div class='grid__row btn__sup-add'>
+         <span class='title--list-dev'>
+          Your list devices
+        </span>      
+    </div>
+  </div>
+
+  <div class='history__table'>
+    <div class='grid__row'>
+      <!-- table tittle -->
+      <div class='table table__header'>
+        
+        <span class='table__col'>Name device</span>
+        <span class='table__col'>Ip address</span>
+        <span class='table__col'>Series number</span>
+        <span class='table__col'>Unit</span>
+        <span class='table__col'>More</span>
+      </div>
+
+      <!-- Table data -->
+      {{#each devices}}
+        <div class='table table__data'>
+          
+          <span class='table__col'>{{this.name}}</span>
+          <span class='table__col'>{{this.ip_add}}</span>
+          <span class='table__col'>{{this.series_number}}</span>
+          <span class='table__col'>
+            {{#if this.unitID}}
+              {{this.unitID.name}}
+              {{else}}
+              Single
+            {{/if}}
+          </span>
+
+          
+          <div class='table__col'>
+              <button class='btn__primary btn--list-sup btn--sup-edit '>
+                  <span class="{{this.name}} {{this.ip_add}} {{this.series_number}} {{this._id}}">?</span>
+              </button>
+             {{!-- <button class='btn__primary btn--list-sup btn--sup-del'>
+                 <span class="{{this._id}}"> - </span>
+              </button> --}}
+          </div>
+        </div>
+      {{/each}}
+
+    </div>
+  </div>
+
+</div>
+
+{{!-- Add device form --}}
+<div class="modal--reg1 modal--reg modal--disable">
+        <div class="modal__overlayxx1 modal__overlayxx"></div>
+        <div class="modal__bodyxx">
+          <!--Register form-->
+          <div class="auth__form auth__form-register modal--disable">
+            <div class="form__container">
+              <div class="form__header">
+                <h3 class="form__header-text">ENTER YOUR DEVICE</h3>
+              </div>
+
+              <div class="form__contain">
+                    <form class='login register-flex' method='POST' action='/supplier/device'>
+
+                      <div class='login'>
+                        {{!-- <label for='user_name'></label> --}}
+                        <input
+                          type='text'
+                          placeholder='name of device'
+                          class='login__input login__input--user'
+                          id='name'
+                          name='name'
+                        />
+                      </div>
+
+
+                      <div class='login'>
+                        {{!-- <label for='user_name'></label> --}}
+                        <input
+                          type='text'
+                          placeholder='ip address'
+                          class='login__input login__input--user'
+                          id='ip_add'
+                          name='ip_add'
+                        />
+                      </div>
+
+                      <div class='login'>
+                        {{!-- <label for='user_name'></label> --}}
+                        <input
+                          type='text'
+                          placeholder='series number'
+                          class='login__input login__input--user'
+                          id='series_number'
+                          name='series_number'
+                        />
+                      </div>
+
+                      <div class='login'>
+                        <select name='companyID' class='login__input login__input--user'>
+                          
+                           {{#each companies}}
+                              <option value={{this._id}}>{{this.name}}</option>
+                           {{/each}}
+                        </select>
+                      </div>
+
+                      <button class='btn--register'>&rarr;</button>
+                    </form>
+              </div>
+            </div>
+          </div>
+
+        </div>
+</div>
+
+{{!-- edit dev form --}}
+<div class="modal--reg2 modal--reg  modal--disable">
+        <div class="modal__overlayxx2 modal__overlayxx"></div>
+        <div class="modal__bodyxx">
+          <!--Register form-->
+          <div class="auth__form edit-form-dev modal--disable">
+            <div class="form__container">
+              <div class="form__header">
+                <h3 class="form__header-text">EDIT YOUR DEVICE</h3>
+              </div>
+
+              <div class="form__contain">
+                    <form class='login register-flex edit-link' method='POST' >
+
+                      <div class='login'>
+                        {{!-- <label for='user_name'></label> --}}
+                        <input
+                          type='text'
+                          placeholder='name of device'
+                          class='login__input login__input--user edit-name'
+                          id='name'
+                          name='name'
+                        />
+                      </div>
+
+
+                      <div class='login'>
+                        {{!-- <label for='user_name'></label> --}}
+                        <input
+                          type='text'
+                          placeholder='ip address'
+                          class='login__input login__input--user edit-ip'
+                          id='ip_add'
+                          name='ip_add'
+                        />
+                      </div>
+
+                      <div class='login'>
+                        {{!-- <label for='user_name'></label> --}}
+                        <input
+                          type='text'
+                          placeholder='series number'
+                          class='login__input login__input--user edit-sr'
+                          id='series_number'
+                          name='series_number'
+                        />
+                      </div>
+
+                      <div class='login'>
+                        <select name='unitID' class='login__input login__input--user'>
+                           {{#each units}}
+                              <option value={{this._id}}>{{this.name}}</option>
+                           {{/each}}
+                        </select>
+                      </div>
+
+                      <button class='btn--register'>&rarr;</button>
+                    </form>
+              </div>
+            </div>
+          </div>
+
+        </div>
+</div>
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', async function(){
+    const container = document.querySelector('.reg__page');
+
+    const modalOv1 = document.querySelector('.modal__overlayxx1');
+    const modalOv2 = document.querySelector('.modal__overlayxx2');
+
+    const modalContainer1 = document.querySelector('.modal--reg1');
+    const modalContainer2 = document.querySelector('.modal--reg2');
+
+    const formRegister = document.querySelector('.auth__form-register');
+    const editForm = document.querySelector('.edit-form-dev');
+    
+    const btnEditDev = document.querySelector('.btn--sup-edit');
+    const tableContainer = document.querySelector('.history__table');
+
+    const editName = document.querySelector('.edit-name');
+    const editIp = document.querySelector('.edit-ip');
+    const editSr = document.querySelector('.edit-sr');
+    const editLink = document.querySelector('.edit-link');
+    const btnDelCompany = document.querySelector('.btn--sup-del');
+    let in5;
+    let idDev;
+
+    
+
+    // open form edit dev
+    tableContainer.addEventListener('click',(e) =>{
+        e.preventDefault(); 
+        const btn = e.target.closest('.btn--sup-edit');
+        const btn1 = e.target.closest('.btn--sup-del');
+        if (!btn && !btn1) return;
+
+        if (btn){
+          // update dev
+          // open form
+          modalContainer2.classList.remove('modal--disable');
+          editForm.classList.remove('modal--disable');
+
+          // fill in4 to a form
+          let in4 = btn.firstElementChild.className.split(' ');
+          editName.setAttribute('value',in4[0]);
+          editIp.setAttribute('value',in4[1]);
+          editSr.setAttribute('value',in4[2]);
+          editLink.setAttribute('action',`device/${in4[3]}?_method=PUT`);
+        }
+        else{
+          //delete company of device
+          //in5 = btn1.firstElementChild.className.split(' ');
+          //idDev = in5[0];
+          //axios.delete(`http://localhost:3000/company/device/${idDev}`, { data: idDev }) 
+          //.then((resp)=>{window.location.href = '/company/home'} )
+          //.catch(function (error) { console.log(error.message); });
+
+        }
+    })
+
+
+
+
+
+    // close form add new device
+    modalOv1.addEventListener('click', (e)=>{
+      if (!e.target.closest('auth__form-register')) 
+      modalContainer1.classList.add('modal--disable');
+    })
+
+    // close form add new device
+    modalOv2.addEventListener('click', (e)=>{
+      if (!e.target.closest('edit-form-dev')) 
+      modalContainer2.classList.add('modal--disable');
+    })
+   
+
+  })
+</script>

@@ -1,0 +1,6 @@
+"user_name","deviceID.name","deviceID.ip_add","deviceID.unitID.name","deviceID.companyID.name","subject","time"
+"manager01","plcw2040","192.168.0.14","Unit1","BKHCM","Temp is higher than 20 oC","2023-05-16T07:35:00.326Z"
+"manager01","plcw2040","192.168.0.14","Unit1","BKHCM","Humid is higher than 20 %","2023-05-16T07:35:00.326Z"
+"manager01","plcw2040","192.168.0.14","Unit1","BKHCM","Humid is higher than 40 %","2023-05-16T07:35:00.326Z"
+"manager01","plcw2040","192.168.0.14","Unit1","BKHCM","Humid is higher than 4 %","2023-05-17T03:38:28.941Z"
+"manager01","plcw2040","192.168.0.14","Unit1","BKHCM","Temp is higher than 9 oC","2023-05-17T03:57:22.621Z"

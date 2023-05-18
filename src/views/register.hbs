@@ -1,0 +1,230 @@
+<!-- Register page -->
+<div class='reg__page grid__column-10' id={{role}}>
+  <div class='reg_control'>
+    <div class='grid__row'>
+
+      <div class="btn__float">
+        <button type="button" class="btn btn__r btn--reg header__register">CREAT ACCOUNT</button>
+        <button type="button" class="btn btn__r btn--dev dev__register">NAME DEVICE</button>
+      </div>
+
+    
+
+      <div class='grid__column-2-3'>
+        <div class='reg__table'>
+          <div class='grid__row'>
+            <!-- table tittle -->
+            <div class='table table__header'>
+              {{!-- <span class='table__id'>ID</span> --}}
+              <span class='table__name'>Name</span>
+              <span class='table__role'>Role</span>
+            </div>
+
+            <!-- Table data -->
+            {{#each registers}}
+            <div class='table table__data'>
+            {{!-- <span class='table__id'>{{this._id}}</span> --}}
+            <span class='table__name'>{{this.user_name}}</span>
+            <span class='table__role'>{{this.role}}</span>
+            </div>
+
+            {{/each}}
+          </div>
+        </div>
+      </div>
+
+
+      <div class='grid__column-2-3'>
+        <div class='reg__tableb'>
+          <div class='grid__row'>
+            <!-- table tittle -->
+            <div class='table table__header'>
+              {{!-- <span class='table__id'>ID</span> --}}
+              <span class='table__name'>Name</span>
+              <span class='table__role'>Address</span>
+            </div>
+
+            <!-- Table data -->
+            {{#each devTable}}
+            <div class='table table__data'>
+            {{!-- <span class='table__id'>{{this._id}}</span> --}}
+            <span class='table__name'>{{this.name}}</span>
+            <span class='table__role'>{{this.ip_add}}</span>
+            </div>
+
+            {{/each}}
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+</div>
+
+<div class="modal--reg modal--disable">
+        <div class="modal__overlayxx"></div>
+        <div class="modal__bodyxx">
+          <!--Register form-->
+          <div class="auth__form auth__form-register modal--disable">
+            <div class="form__container">
+              <div class="form__header">
+                <h3 class="form__header-text">REGISTER</h3>
+                <button class="form__header-btn btn__login--change">
+                  DEVICE
+                </button>
+              </div>
+
+              <div class="form__contain">
+                    <form class='login register-flex' method='POST' action='/register/store'>
+
+                      <div class='login'>
+                        {{!-- <label for='user_name'></label> --}}
+                        <input
+                          type='text'
+                          placeholder='User name'
+                          class='login__input login__input--user'
+                          id='user_name'
+                          name='user_name'
+                        />
+                      </div>
+
+                      <!-- In practice, use type="password" -->
+                      <div class='login register-flex'>
+                        {{!-- <label for='pass'></label> --}}
+                        <input
+                          type='password'
+                          placeholder='PIN'
+                          minlength='3'
+                          class='login__input login__input--pin'
+                          id='pass'
+                          name='pass'
+                        />
+                        <input
+                          type='password'
+                          placeholder='Confirm'
+                          minlength='3'
+                          class='login__input login__input--pin'
+                          name="confirm"
+                        />
+                      </div>
+
+                      
+
+                      <div class='login'>
+                        <select name='role' class='login__input login__input--user'>
+                          <option value='manager'>Manager</option>
+                          <option value='operator'>Operator</option>
+                          <option value='viewer'>Viewer</option>
+                        </select>
+                      </div>
+
+                      <button class='btn--register'>&rarr;</button>
+                    </form>
+              </div>
+            </div>
+          </div>
+
+          <!--Login form-->
+          <div class="auth__form auth__form-login">
+            <div class="form__container">
+              <div class="form__header">
+                <h3 class="form__header-text">DEVICE</h3>
+                <button class="form__header-btn btn__login--change">
+                 REGISTER
+                </button>
+              </div>
+
+              <div class="form__contain">
+                  <form class='login register-flex' method='POST' action='/device/save'>
+                      <div class='login'>
+                        <select name='ip_add' class='login__input login__input--user'>
+                          {{#each devices}}
+                            <option value={{this}}>{{this}}</option>
+                          {{/each}}
+                        </select>
+                      </div>
+
+                      <div class='login'>
+                        <label for='name'></label>
+                        <input
+                          type='text'
+                          placeholder='Device name'
+                          class='login__input login__input--user'
+                          id='user_name'
+                          name='name'
+                        />
+                      </div>
+                      <button class='login__btn-dev'>&rarr;</button>
+                  </form>
+              </div>
+
+            </div>
+          </div>
+        </div>
+</div>
+
+
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', async function(){
+    const container = document.querySelector('.reg__page');
+    const device = document.querySelector('.device');
+    const formRegister = document.querySelector('.auth__form-register');
+    const formLogin = document.querySelector('.auth__form-login');
+    const modalContainer = document.querySelector('.modal--reg');
+    const btnReg = document.querySelector('.btn--reg');
+    const btnDev = document.querySelector('.btn--dev');
+    const btnLoginChange = document.querySelectorAll('.btn__login--change');
+    
+    const modalOv = document.querySelector('.modal__overlayxx');
+
+
+    //get role
+    const role = await container.id;
+
+    btnReg.addEventListener('click',function(e){
+      modalContainer.classList.remove('modal--disable');
+      formRegister.classList.add('modal--disable');
+      formLogin.classList.add('modal--disable');
+
+      if (e.target.classList.contains('header__register')) {
+        formRegister.classList.toggle('modal--disable');
+      } else {
+        formLogin.classList.toggle('modal--disable');
+      }
+    })
+
+    btnDev.addEventListener('click',function(e){
+      modalContainer.classList.remove('modal--disable');
+      formRegister.classList.add('modal--disable');
+      formLogin.classList.add('modal--disable');
+
+      if (e.target.classList.contains('dev__register')) {
+        formLogin.classList.toggle('modal--disable');
+      } else {
+        formRegister.classList.toggle('modal--disable');
+      }
+    })
+
+    btnLoginChange.forEach(el => {
+      el.addEventListener('click', (e) =>{
+         formLogin.classList.toggle('modal--disable');
+          formRegister.classList.toggle('modal--disable');
+      });
+    });
+
+    modalOv.addEventListener('click', (e)=>{
+      if (!e.target.closest('modal__bodyxx')) 
+      modalContainer.classList.add('modal--disable');
+    })
+
+    if (role === 'admin') {
+      device.classList.remove('hidden');
+      device.classList.add('active');
+    }
+    
+
+  })
+</script>
