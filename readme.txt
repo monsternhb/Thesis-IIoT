@@ -1,10 +1,9 @@
-- topic point out the color set up
-	color_of_type1
-	color_of_type2
-	color_of_type3 
-- topic parametter
-	Vx_max
-- topic check camera
-	checkConnect
--topic alarm no sp
-	alarm_no-sp
+1. Run VScode
+2. Install all packed by command: npm install
+3. Run localhost by command: npm run start
+4. login as supplier
+-user name: supplier
+-pass word: 1234
+5. login as manager:
+-user name: manager01
+-pass word: 1111
